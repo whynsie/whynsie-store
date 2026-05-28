@@ -1,0 +1,25 @@
+/* Базовые настройки страницы */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #050505;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased; /* Делает шрифты тонкими и дорогими */
+}
+
+/* Плавная кинематографичная анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Скрываем стандартный скроллбар для эстетики */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; 
+}
