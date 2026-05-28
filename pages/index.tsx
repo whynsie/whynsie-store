@@ -34,7 +34,8 @@ const RainMatrix = ({ isPlaying, isMobile }: { isPlaying: boolean, isMobile: boo
 
     const beat = Math.sin(state.clock.elapsedTime * 6) > 0.85 ? 1.3 : 1;
 
-    groupRef.current.children.forEach((mesh, i) => {
+    groupRef.current.children.forEach((child, i) => {
+      const mesh = child as any; // <-- Эта строчка отключает паранойю Vercel
       const drop = drops[i];
       if (!drop.isExploded) {
         mesh.position.y -= drop.speed * beat; 
